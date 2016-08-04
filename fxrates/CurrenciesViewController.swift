@@ -81,6 +81,7 @@ class CurrenciesViewController: UITableViewController {
             for (code, rate) in currencyArray {
                 currencies.append((code: code, rate: rate))
             }
+            currencies.sortInPlace { return $0.code < $1.code }
         } catch let error {
             print(error)
         }
