@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */; };
 		D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773BA601D50B5FD000FF636 /* AppDelegate.swift */; };
-		D773BA631D50B5FD000FF636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773BA621D50B5FD000FF636 /* ViewController.swift */; };
 		D773BA661D50B5FD000FF636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D773BA641D50B5FD000FF636 /* Main.storyboard */; };
 		D773BA681D50B5FD000FF636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D773BA671D50B5FD000FF636 /* Assets.xcassets */; };
 		D773BA6B1D50B5FD000FF636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D773BA691D50B5FD000FF636 /* LaunchScreen.storyboard */; };
@@ -26,9 +26,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
 		D773BA5D1D50B5FD000FF636 /* fxrates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fxrates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D773BA601D50B5FD000FF636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D773BA621D50B5FD000FF636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D773BA651D50B5FD000FF636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D773BA671D50B5FD000FF636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D773BA6A1D50B5FD000FF636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				D773BA601D50B5FD000FF636 /* AppDelegate.swift */,
-				D773BA621D50B5FD000FF636 /* ViewController.swift */,
 				D773BA641D50B5FD000FF636 /* Main.storyboard */,
+				D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */,
 				D773BA671D50B5FD000FF636 /* Assets.xcassets */,
 				D773BA691D50B5FD000FF636 /* LaunchScreen.storyboard */,
 				D773BA6C1D50B5FD000FF636 /* Info.plist */,
@@ -199,7 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D773BA631D50B5FD000FF636 /* ViewController.swift in Sources */,
+				D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */,
 				D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +390,7 @@
 				D773BA7C1D50B5FD000FF636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D773BA7D1D50B5FD000FF636 /* Build configuration list for PBXNativeTarget "fxratesTests" */ = {
 			isa = XCConfigurationList;
@@ -398,6 +399,7 @@
 				D773BA7F1D50B5FD000FF636 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
