@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */; };
+		D7296ED91D539CAA003567BC /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7296ED81D539CAA003567BC /* Currency.swift */; };
 		D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773BA601D50B5FD000FF636 /* AppDelegate.swift */; };
 		D773BA661D50B5FD000FF636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D773BA641D50B5FD000FF636 /* Main.storyboard */; };
 		D773BA681D50B5FD000FF636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D773BA671D50B5FD000FF636 /* Assets.xcassets */; };
 		D773BA6B1D50B5FD000FF636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D773BA691D50B5FD000FF636 /* LaunchScreen.storyboard */; };
 		D773BA761D50B5FD000FF636 /* fxratesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773BA751D50B5FD000FF636 /* fxratesTests.swift */; };
+		D777F0B01D5B58D40003D946 /* CurrencyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
+		D7296ED81D539CAA003567BC /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		D773BA5D1D50B5FD000FF636 /* fxrates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fxrates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D773BA601D50B5FD000FF636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D773BA651D50B5FD000FF636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		D773BA711D50B5FD000FF636 /* fxratesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fxratesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D773BA751D50B5FD000FF636 /* fxratesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fxratesTests.swift; sourceTree = "<group>"; };
 		D773BA771D50B5FD000FF636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 			children = (
 				D773BA601D50B5FD000FF636 /* AppDelegate.swift */,
 				D773BA641D50B5FD000FF636 /* Main.storyboard */,
+				D7296ED81D539CAA003567BC /* Currency.swift */,
+				D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */,
 				D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */,
 				D773BA671D50B5FD000FF636 /* Assets.xcassets */,
 				D773BA691D50B5FD000FF636 /* LaunchScreen.storyboard */,
@@ -199,7 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7296ED91D539CAA003567BC /* Currency.swift in Sources */,
 				D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */,
+				D777F0B01D5B58D40003D946 /* CurrencyStore.swift in Sources */,
 				D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

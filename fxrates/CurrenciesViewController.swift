@@ -10,7 +10,7 @@ import UIKit
 
 class CurrenciesViewController: UITableViewController {
 
-    var currencies = [(code: String, rate: Double)]()
+    var currencies = [Currency]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +79,7 @@ class CurrenciesViewController: UITableViewController {
             }
             
             for (code, rate) in currencyArray {
-                currencies.append((code: code, rate: rate))
+                currencies.append(Currency(code: code, rate: rate))
             }
             currencies.sortInPlace { return $0.code < $1.code }
         } catch let error {
