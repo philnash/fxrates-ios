@@ -12,6 +12,12 @@ class Currency: NSObject, NSCoding {
     let code: String
     let rate: Double
     
+    static let archiveURL: NSURL = {
+        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.URLByAppendingPathComponent("currencies.archive")
+    }()
+    
     init(code: String, rate: Double) {
         self.code = code
         self.rate = rate

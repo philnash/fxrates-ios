@@ -12,21 +12,8 @@ class CurrencyStore {
     var currencies = [Currency]()
     let currencyMetadata: CurrencyMetadata
     
-    let currencyArchiveURL: NSURL = {
-        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let documentDirectory = documentsDirectories.first!
-        return documentDirectory.URLByAppendingPathComponent("currencies.archive")
-    }()
-    
-    let metadataArchiveURL: NSURL = {
-        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        let documentDirectory = documentsDirectories.first!
-        return documentDirectory.URLByAppendingPathComponent("metadata.archive")
-    }()
-    
-    
     init() {
-        if let path = metadataArchiveURL.path, archivedMetadata = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? CurrencyMetadata {
+        if let path = CurrencyMetadata.archiveURL.path, archivedMetadata = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? CurrencyMetadata {
             currencyMetadata = archivedMetadata
         } else {
             self.currencyMetadata = CurrencyMetadata(timestamp: nil, disclaimer: nil, license: nil, base: nil)
@@ -72,10 +59,17 @@ class CurrencyStore {
                 currencies.append(Currency(code: code, rate: rate))
             }
             currencies.sortInPlace { return $0.code < $1.code }
+            saveData()
         } catch let error {
             print(error)
         }
         completion()
+    }
+    
+    func saveData() -> Bool {
+        let metadataSaved = NSKeyedArchiver.archiveRootObject(currencyMetadata, toFile: CurrencyMetadata.archiveURL.path!)
+        let currenciesSaved = NSKeyedArchiver.archiveRootObject(currencies, toFile: Currency.archiveURL.path!)
+        return metadataSaved && currenciesSaved
     }
 
 }

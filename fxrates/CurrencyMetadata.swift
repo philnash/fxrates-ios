@@ -14,6 +14,12 @@ class CurrencyMetadata: NSObject, NSCoding {
     var license: String?
     var base: String?
     
+    static let archiveURL: NSURL = {
+        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.URLByAppendingPathComponent("metadata.archive")
+    }()
+    
     var lastUpdated: NSDate? {
         if let ts = timestamp {
             return NSDate(timeIntervalSince1970: ts)
