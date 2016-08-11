@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let currencyStore = CurrencyStore()
+        
+        let navController = window!.rootViewController as! UINavigationController
+        let currenciesViewController = navController.topViewController as! CurrenciesViewController
+        currenciesViewController.currencyStore = currencyStore
+        
         return true
     }
 

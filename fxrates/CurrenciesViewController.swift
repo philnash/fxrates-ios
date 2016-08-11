@@ -10,11 +10,16 @@ import UIKit
 
 class CurrenciesViewController: UITableViewController {
 
-    var currencies = [Currency]()
+    var currencyStore: CurrencyStore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        get_data_from_url("http://www.fxrat.es/rates.json")
+        currencyStore.getDataFromURL("http://www.fxrat.es/rates.json") {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.tableView.reloadData()
+                return
+            })
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,64 +42,18 @@ class CurrenciesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return currencies.count
+        return currencyStore.currencies.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("currencyCell", forIndexPath: indexPath)
 
-        cell.textLabel?.text = currencies[indexPath.row].code;
+        cell.textLabel?.text = currencyStore.currencies[indexPath.row].code;
 
         return cell
     }
 
-    func get_data_from_url(url:String) -> Void {
-        let url = NSURL(string: url)
-        let session = NSURLSession.sharedSession()
-        let dataTask = session.dataTaskWithURL(url!) { (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-            if let data = data {
-                if data.length > 0 && error == nil{
-                    self.extract_json(data)
-                }else if data.length == 0 && error == nil{
-                    print("Nothing was downloaded")
-                } else if error != nil{
-                    print("Error happened = \(error)")
-                }
-            }
-        }
-        dataTask.resume()
-    }
-    
-    func extract_json(jsonData: NSData) -> Void {
-        do {
-            let json: AnyObject? = try NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
-            print(json)
-            guard let
-                jsonDictionary = json as? [NSObject: AnyObject],
-                currencyArray = jsonDictionary["rates"] as? [String: Double]
-            else {
-                print("something went wrong")
-                return
-            }
-            
-            for (code, rate) in currencyArray {
-                currencies.append(Currency(code: code, rate: rate))
-            }
-            currencies.sortInPlace { return $0.code < $1.code }
-        } catch let error {
-            print(error)
-        }
-        do_table_refresh();
-    }
-    
-    func do_table_refresh()
-    {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-            return
-        })
-    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

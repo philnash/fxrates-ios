@@ -15,6 +15,7 @@
 		D773BA6B1D50B5FD000FF636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D773BA691D50B5FD000FF636 /* LaunchScreen.storyboard */; };
 		D773BA761D50B5FD000FF636 /* fxratesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773BA751D50B5FD000FF636 /* fxratesTests.swift */; };
 		D777F0B01D5B58D40003D946 /* CurrencyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */; };
+		D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		D773BA751D50B5FD000FF636 /* fxratesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fxratesTests.swift; sourceTree = "<group>"; };
 		D773BA771D50B5FD000FF636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyStore.swift; sourceTree = "<group>"; };
+		D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyMetadata.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				D773BA641D50B5FD000FF636 /* Main.storyboard */,
 				D7296ED81D539CAA003567BC /* Currency.swift */,
 				D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */,
+				D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */,
 				D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */,
 				D773BA671D50B5FD000FF636 /* Assets.xcassets */,
 				D773BA691D50B5FD000FF636 /* LaunchScreen.storyboard */,
@@ -208,6 +211,7 @@
 				D7296ED91D539CAA003567BC /* Currency.swift in Sources */,
 				D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */,
 				D777F0B01D5B58D40003D946 /* CurrencyStore.swift in Sources */,
+				D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */,
 				D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
