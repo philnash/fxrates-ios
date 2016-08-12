@@ -38,9 +38,11 @@ struct CurrencyMapping {
         mapping["BOB"] = CurrencyDetail(name: "Boliviano", flag: "🇧🇴", code: "BOB")
         mapping["BRL"] = CurrencyDetail(name: "Brazilian Real", flag: "🇧🇷", code: "BRL")
         mapping["BSD"] = CurrencyDetail(name: "Bahamian Dollar", flag: "🇧🇸", code: "BSD")
+        mapping["BTC"] = CurrencyDetail(name: "Bitcoin", flag: "", code: "BTC")
         mapping["BTN"] = CurrencyDetail(name: "Bhutanese Ngultrum", flag: "🇧🇹", code: "BTN")
         mapping["BWP"] = CurrencyDetail(name: "Botswana Pula", flag: "🇧🇼", code: "BWP")
         mapping["BYR"] = CurrencyDetail(name: "Belarusian Ruble", flag: "🇧🇾", code: "BYR")
+        mapping["BYN"] = CurrencyDetail(name: "New Belarusian Ruble", flag: "🇧🇾", code: "BYR")
         mapping["BZD"] = CurrencyDetail(name: "Belize Dollar", flag: "🇧🇿", code: "BZD")
         mapping["CAD"] = CurrencyDetail(name: "Canadian Dollar", flag: "🇨🇦", code: "CAD")
         mapping["CDF"] = CurrencyDetail(name: "Congolese Franc", flag: "🇨🇩", code: "CDF")
@@ -50,6 +52,7 @@ struct CurrencyMapping {
         mapping["CNY"] = CurrencyDetail(name: "Chinese Yuan", flag: "🇨🇱", code: "CNY")
         mapping["COP"] = CurrencyDetail(name: "Colombian Peso", flag: "🇨🇴", code: "COP")
         mapping["CRC"] = CurrencyDetail(name: "Costa Rican Colón", flag: "🇨🇷", code: "CRC")
+        mapping["CUC"] = CurrencyDetail(name: "Cuban Convertible Peso", flag: "🇨🇺", code: "CUP")
         mapping["CUP"] = CurrencyDetail(name: "Cuban Peso", flag: "🇨🇺", code: "CUP")
         mapping["CVE"] = CurrencyDetail(name: "Cape Verdean Escudo", flag: "🇨🇻", code: "CVE")
         mapping["CZK"] = CurrencyDetail(name: "Czech Koruna", flag: "🇨🇿", code: "CZK")
@@ -59,12 +62,14 @@ struct CurrencyMapping {
         mapping["DZD"] = CurrencyDetail(name: "Algerian Dinar", flag: "🇩🇿", code: "DZD")
         mapping["EEK"] = CurrencyDetail(name: "Estonian Kroon", flag: "🇪🇪", code: "EEK")
         mapping["EGP"] = CurrencyDetail(name: "Egyptian Pound", flag: "🇪🇬", code: "EGP")
+        mapping["ERN"] = CurrencyDetail(name: "Eritrean Nakfa", flag: "🇪🇷", code: "ERN")
         mapping["ETB"] = CurrencyDetail(name: "Ethiopian Birr", flag: "🇪🇹", code: "ETB")
         mapping["EUR"] = CurrencyDetail(name: "Euro", flag: "🇪🇺", code: "EUR")
         mapping["FJD"] = CurrencyDetail(name: "Fiji Dollar", flag: "🇫🇯", code: "FJD")
         mapping["FKP"] = CurrencyDetail(name: "Falkland Island Pound", flag: "🇫🇰", code: "FKP")
         mapping["GBP"] = CurrencyDetail(name: "British Pound", flag: "🇬🇧", code: "GBP")
         mapping["GEL"] = CurrencyDetail(name: "Georgian Lari", flag: "🇬🇪", code: "GEL")
+        mapping["GGP"] = CurrencyDetail(name: "Guernsey Pound", flag: "🇬🇬", code: "GGP")
         mapping["GHS"] = CurrencyDetail(name: "Ghanaian Cedi", flag: "🇬🇭", code: "GHS")
         mapping["GIP"] = CurrencyDetail(name: "Gibraltar Pound", flag: "🇬🇮", code: "GIP")
         mapping["GMD"] = CurrencyDetail(name: "Gambian Dalasi", flag: "🇬🇲", code: "GMD")
@@ -78,10 +83,12 @@ struct CurrencyMapping {
         mapping["HUF"] = CurrencyDetail(name: "Hungarian Forint", flag: "🇭🇺", code: "HUF")
         mapping["IDR"] = CurrencyDetail(name: "Indonesian Rupiah", flag: "🇮🇩", code: "IDR")
         mapping["ILS"] = CurrencyDetail(name: "Israeli Sheqel", flag: "🇮🇱", code: "ILS")
+        mapping["IMP"] = CurrencyDetail(name: "Manx Pound", flag: "🇮🇲", code: "IMP")
         mapping["INR"] = CurrencyDetail(name: "Indian Rupee", flag: "🇮🇳", code: "INR")
         mapping["IQD"] = CurrencyDetail(name: "Iraqi Dinar", flag: "🇮🇶", code: "IQD")
         mapping["IRR"] = CurrencyDetail(name: "Iranian Rial", flag: "🇮🇷", code: "IRR")
         mapping["ISK"] = CurrencyDetail(name: "Icelandic Krona", flag: "🇮🇸", code: "ISK")
+        mapping["JEP"] = CurrencyDetail(name: "Jersey Pound", flag: "🇯🇪", code: "JEP")
         mapping["JMD"] = CurrencyDetail(name: "Jamaican Dollar", flag: "🇯🇲", code: "JMD")
         mapping["JOD"] = CurrencyDetail(name: "Jordanian Dinar", flag: "🇯🇴", code: "JOD")
         mapping["JPY"] = CurrencyDetail(name: "Japanese Yen", flag: "🇯🇵", code: "JPY")
@@ -110,6 +117,7 @@ struct CurrencyMapping {
         mapping["MNT"] = CurrencyDetail(name: "Mongolian Tugrik", flag: "🇲🇳", code: "MNT")
         mapping["MOP"] = CurrencyDetail(name: "Macau Pataca", flag: "🇲🇴", code: "MOP")
         mapping["MRO"] = CurrencyDetail(name: "Mauritanian Ougulya", flag: "🇲🇷", code: "MRO")
+        mapping["MTL"] = CurrencyDetail(name: "Maltese Lira", flag: "🇲🇹", code: "MTL")
         mapping["MUR"] = CurrencyDetail(name: "Mauritian Rupee", flag: "🇲🇺", code: "MUR")
         mapping["MVR"] = CurrencyDetail(name: "Maldivian Rufiyaa", flag: "🇲🇻", code: "MVR")
         mapping["MWK"] = CurrencyDetail(name: "Malawian Kwacha", flag: "🇲🇼", code: "MWK")
@@ -169,18 +177,31 @@ struct CurrencyMapping {
         mapping["VUV"] = CurrencyDetail(name: "Vanuatu Vatu", flag: "🇻🇺", code: "VUV")
         mapping["WST"] = CurrencyDetail(name: "Samoan Tala", flag: "🇼🇸", code: "WST")
         mapping["XAF"] = CurrencyDetail(name: "Central African CFA Franc", flag: "🇨🇲🇨🇫🇹🇩🇨🇬🇬🇶🇬🇦", code: "XAF")
+        mapping["XAG"] = CurrencyDetail(name: "Silver Ounce", flag: "", code: "XAG")
+        mapping["XAU"] = CurrencyDetail(name: "Gold Ounce", flag: "", code: "XAU")
         mapping["XCD"] = CurrencyDetail(name: "East Caribbean Dollar", flag: "🇦🇬🇩🇲🇬🇩🇰🇳🇱🇨🇻🇨🇦🇮🇲🇸", code: "XCD")
         mapping["XDR"] = CurrencyDetail(name: "IMF Special Drawing Rights", flag: "", code: "XDR")
         mapping["XOF"] = CurrencyDetail(name: "West African CFA Franc", flag: "🇧🇯🇧🇫🇬🇼🇨🇮🇲🇱🇳🇪🇸🇳🇹🇬", code: "XOF")
+        mapping["XPD"] = CurrencyDetail(name: "Palladium Ounce", flag: "", code: "XPD")
         mapping["XPF"] = CurrencyDetail(name: "Pacific Franc", flag: "🇵🇫🇳🇨🇼🇫", code: "XPF")
+        mapping["XPT"] = CurrencyDetail(name: "Platinum Ounce", flag: "", code: "XPT")
         mapping["YER"] = CurrencyDetail(name: "Yemeni Riyal", flag: "🇾🇪", code: "YER")
         mapping["ZAR"] = CurrencyDetail(name: "South African Rand", flag: "🇿🇦", code: "ZAR")
-        mapping["ZMK"] = CurrencyDetail(name: "Zambian Kwacha", flag: "🇿🇲", code: "ZMK")
+        mapping["ZMK"] = CurrencyDetail(name: "Zambian Kwacha (old)", flag: "🇿🇲", code: "ZMK")
+        mapping["ZMW"] = CurrencyDetail(name: "Zambian Kwacha", flag: "🇿🇲", code: "ZMW")
         mapping["ZWD"] = CurrencyDetail(name: "Zimbabwean Dollar", flag: "🇿🇼", code: "ZWD")
         mapping["ZWL"] = CurrencyDetail(name: "Zimbabwean Dollar", flag: "🇿🇼", code: "ZWL")
         mapping["ZWR"] = CurrencyDetail(name: "Zimbabwean Dollar", flag: "🇿🇼", code: "ZWR")
 
         return mapping
     }()
+    
+    static func details(code: String) -> CurrencyDetail {
+        if let detail = mapping[code] {
+            return detail
+        } else {
+            return CurrencyDetail(name: "", flag: "", code: code)
+        }
+    }
 }
 

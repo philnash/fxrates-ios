@@ -56,7 +56,13 @@ class CurrenciesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("currencyCell", forIndexPath: indexPath)
 
-        cell.textLabel?.text = currencyStore.currencies[indexPath.row].code;
+        let currency = currencyStore.currencies[indexPath.row]
+        let detail = CurrencyMapping.details(currency.code)
+        if detail.name != "" {
+            cell.textLabel?.text = "\(currency.code) - \(detail.name) \(detail.flag)"
+        } else {
+            cell.textLabel?.text = currency.code
+        }
 
         return cell
     }
