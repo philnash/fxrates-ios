@@ -17,6 +17,7 @@
 		D777F0B01D5B58D40003D946 /* CurrencyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */; };
 		D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */; };
 		D777F0B41D5DFAAB0003D946 /* CurencyMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */; };
+		D777F0B61D5E23DE0003D946 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B51D5E23DE0003D946 /* Money.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyStore.swift; sourceTree = "<group>"; };
 		D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyMetadata.swift; sourceTree = "<group>"; };
 		D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurencyMapping.swift; sourceTree = "<group>"; };
+		D777F0B51D5E23DE0003D946 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */,
 				D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */,
 				D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */,
+				D777F0B51D5E23DE0003D946 /* Money.swift */,
 				D773BA671D50B5FD000FF636 /* Assets.xcassets */,
 				D773BA691D50B5FD000FF636 /* LaunchScreen.storyboard */,
 				D773BA6C1D50B5FD000FF636 /* Info.plist */,
@@ -213,6 +216,7 @@
 			files = (
 				D777F0B41D5DFAAB0003D946 /* CurencyMapping.swift in Sources */,
 				D7296ED91D539CAA003567BC /* Currency.swift in Sources */,
+				D777F0B61D5E23DE0003D946 /* Money.swift in Sources */,
 				D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */,
 				D777F0B01D5B58D40003D946 /* CurrencyStore.swift in Sources */,
 				D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */,

@@ -90,18 +90,22 @@ class CurrencyStore {
                 timestamp = jsonDictionary["timestamp"] as? NSTimeInterval,
                 disclaimer = jsonDictionary["disclaimer"] as? String,
                 license = jsonDictionary["license"] as? String,
-                base = jsonDictionary["base"] as? String,
+                baseString = jsonDictionary["base"] as? String,
                 currencyArray = jsonDictionary["rates"] as? [String: Double]
             else {
                 throw JSONError.DataNotPresent
             }
-            currencyMetadata = CurrencyMetadata(timestamp: timestamp, disclaimer: disclaimer, license: license, base: base)
+            
             currencies.removeAll()
+            
+            var base: Currency?
             for (code, rate) in currencyArray {
-                currencies.append(Currency(code: code, rate: rate))
+                let currency = Currency(code: code, rate: rate)
+                currencies.append(currency)
+                if code == baseString { base = currency }
             }
             currencies.sortInPlace { return $0.code < $1.code }
-
+            currencyMetadata = CurrencyMetadata(timestamp: timestamp, disclaimer: disclaimer, license: license, base: base)
             return .Success
         } catch let error {
             return .Failure(error)

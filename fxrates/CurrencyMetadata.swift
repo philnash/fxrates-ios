@@ -12,7 +12,7 @@ class CurrencyMetadata: NSObject, NSCoding {
     var timestamp: NSTimeInterval?
     var disclaimer: String?
     var license: String?
-    var base: String?
+    var base: Currency?
     
     static let archiveURL: NSURL = {
         let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
@@ -28,7 +28,7 @@ class CurrencyMetadata: NSObject, NSCoding {
         }
     }
     
-    init(timestamp: NSTimeInterval?, disclaimer: String?, license: String?, base: String?) {
+    init(timestamp: NSTimeInterval?, disclaimer: String?, license: String?, base: Currency?) {
         self.timestamp = timestamp
         self.disclaimer = disclaimer
         self.license = license
@@ -48,6 +48,6 @@ class CurrencyMetadata: NSObject, NSCoding {
         timestamp = aDecoder.decodeDoubleForKey("timestamp")
         disclaimer = aDecoder.decodeObjectForKey("disclaimer") as? String
         license = aDecoder.decodeObjectForKey("license") as? String
-        base = aDecoder.decodeObjectForKey("base") as? String
+        base = aDecoder.decodeObjectForKey("base") as? Currency
     }
 }
