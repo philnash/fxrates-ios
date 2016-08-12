@@ -14,11 +14,18 @@ class CurrenciesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currencyStore.getDataFromURL("http://www.fxrat.es/rates.json") {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-                return
-            })
+        currencyStore.getData { (result) -> Void in
+            // If result is an error and no existing saved data then show error message. Modal?
+            switch result {
+            case .Success:
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.tableView.reloadData()
+                    return
+                })
+            case .Failure(_):
+                print("there was an error fetching the latest currency data")
+            }
+
         }
 
         // Uncomment the following line to preserve selection between presentations
