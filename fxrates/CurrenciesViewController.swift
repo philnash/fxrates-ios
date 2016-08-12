@@ -11,12 +11,20 @@ import UIKit
 class CurrenciesViewController: UITableViewController {
 
     var currencyStore: CurrencyStore!
+    var money: Money!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let base = currencyStore.currencyMetadata.base {
+            money = Money(base: base)
+        }
+
         currencyStore.getData { (result) -> Void in
             switch result {
             case .Success:
+                if let base = self.currencyStore.currencyMetadata.base {
+                    self.money = Money(base: base)
+                }
                 dispatch_async(dispatch_get_main_queue(), {
                     self.tableView.reloadData()
                     return
@@ -58,11 +66,14 @@ class CurrenciesViewController: UITableViewController {
 
         let currency = currencyStore.currencies[indexPath.row]
         let detail = CurrencyMapping.details(currency.code)
+        var text: String
         if detail.name != "" {
-            cell.textLabel?.text = "\(currency.code) - \(detail.name) \(detail.flag)"
+            text = "\(currency.code) - \(detail.name) \(detail.flag)"
         } else {
-            cell.textLabel?.text = currency.code
+            text = currency.code
         }
+        text += " \(money.convert(10, from: currencyStore.currencyMetadata.base!, to: currency))"
+        cell.textLabel?.text = text
 
         return cell
     }
