@@ -15,26 +15,6 @@ class CurrenciesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let base = currencyStore.currencyMetadata.base {
-            money = Money(base: base)
-        }
-
-        currencyStore.getData { (result) -> Void in
-            switch result {
-            case .Success:
-                if let base = self.currencyStore.currencyMetadata.base {
-                    self.money = Money(base: base)
-                }
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.tableView.reloadData()
-                    return
-                })
-            case .Failure(_):
-                // If result is an error and no existing saved data then show error message. Modal?
-                print("there was an error fetching the latest currency data")
-            }
-
-        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -117,5 +117,17 @@ class CurrencyStore {
         let currenciesSaved = NSKeyedArchiver.archiveRootObject(currencies, toFile: Currency.archiveURL.path!)
         return metadataSaved && currenciesSaved
     }
+    
+    func randomCurrency() -> Currency {
+        let randomIndex = Int(arc4random_uniform(UInt32(currencies.count)))
+        return currencies[randomIndex]
+    }
+    
+    func currencyFromCode(code: String) -> Currency? {
+        let filteredCurrencies = currencies.filter { (currency) -> Bool in
+            return currency.code == code
+        }
+        return filteredCurrencies[0]
+    }
 
 }

@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let currencyStore = CurrencyStore()
         
         let navController = window!.rootViewController as! UINavigationController
-        let currenciesViewController = navController.topViewController as! CurrenciesViewController
-        currenciesViewController.currencyStore = currencyStore
+        let converterViewController = navController.topViewController as! ConverterViewController
+        converterViewController.currencyStore = currencyStore
         
         return true
     }

@@ -18,6 +18,7 @@
 		D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */; };
 		D777F0B41D5DFAAB0003D946 /* CurencyMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */; };
 		D777F0B61D5E23DE0003D946 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B51D5E23DE0003D946 /* Money.swift */; };
+		D7EBD9DB1D6319EE0012AAEC /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EBD9DA1D6319EE0012AAEC /* ConverterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyMetadata.swift; sourceTree = "<group>"; };
 		D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurencyMapping.swift; sourceTree = "<group>"; };
 		D777F0B51D5E23DE0003D946 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		D7EBD9DA1D6319EE0012AAEC /* ConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				D773BA601D50B5FD000FF636 /* AppDelegate.swift */,
 				D773BA641D50B5FD000FF636 /* Main.storyboard */,
+				D7EBD9DA1D6319EE0012AAEC /* ConverterViewController.swift */,
 				D7296ED81D539CAA003567BC /* Currency.swift */,
 				D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */,
 				D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */,
@@ -221,6 +224,7 @@
 				D777F0B01D5B58D40003D946 /* CurrencyStore.swift in Sources */,
 				D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */,
 				D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */,
+				D7EBD9DB1D6319EE0012AAEC /* ConverterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
