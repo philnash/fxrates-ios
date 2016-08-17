@@ -162,45 +162,50 @@
             </objects>
             <point key="canvasLocation" x="276" y="1169"/>
         </scene>
-        <!--Currencies-->
-        <scene sceneID="DmO-jk-0yK">
+        <!--Choose currency-->
+        <scene sceneID="Br4-i3-vul">
             <objects>
-                <tableViewController storyboardIdentifier="currencies" id="BBH-YF-wsw" customClass="CurrenciesViewController" customModule="fxrates" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bD9-5L-hFv">
+                <tableViewController id="VTJ-Sg-Z5m" customClass="CurrenciesViewController" customModule="fxrates" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eeB-Jn-Q6s">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyCell" id="YoG-cE-wZn">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currencyCell" id="z5N-o3-xwF">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YoG-cE-wZn" id="HBv-E9-fzT">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z5N-o3-xwF" id="IDV-Xu-K2d">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="BBH-YF-wsw" id="zDK-55-cbI"/>
-                            <outlet property="delegate" destination="BBH-YF-wsw" id="Oa5-cB-4LX"/>
+                            <outlet property="dataSource" destination="VTJ-Sg-Z5m" id="nFX-4u-C8b"/>
+                            <outlet property="delegate" destination="VTJ-Sg-Z5m" id="KqD-SV-NNc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Currencies" id="iaP-P5-ts9"/>
-                    <connections>
-                        <outlet property="searchDisplayController" destination="unP-PH-mHc" id="SXF-Uz-eWS"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Choose currency" id="wQK-Dm-CRw"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gPu-j3-sYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="unP-PH-mHc">
-                    <connections>
-                        <outlet property="delegate" destination="BBH-YF-wsw" id="ORB-a3-eZw"/>
-                        <outlet property="searchContentsController" destination="BBH-YF-wsw" id="BPc-pO-TVI"/>
-                        <outlet property="searchResultsDataSource" destination="BBH-YF-wsw" id="9oX-Cw-Iep"/>
-                        <outlet property="searchResultsDelegate" destination="BBH-YF-wsw" id="9db-U2-hB6"/>
-                    </connections>
-                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Su7-Td-gDw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1078" y="613"/>
+            <point key="canvasLocation" x="989" y="1169"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Cw-DD-Ue6">
+            <objects>
+                <navigationController storyboardIdentifier="currencySearch" id="Ia4-a2-pG5" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="srg-bK-SR8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VTJ-Sg-Z5m" kind="relationship" relationship="rootViewController" id="vt7-rR-sdx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r2v-Do-WDf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989" y="497"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6gh-yn-6Je">

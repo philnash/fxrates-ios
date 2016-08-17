@@ -46,10 +46,11 @@ class ConverterViewController: UIViewController {
     }
     
     @IBAction func mainCurrencyChangePressed(sender: UIButton) {
-        let currenciesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("currencies") as! CurrenciesViewController
+        let newNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("currencySearch") as! UINavigationController
+        let currenciesViewController = newNavigationController.topViewController as! CurrenciesViewController
         currenciesViewController.currencyStore = self.currencyStore
         currenciesViewController.opener = self
-        presentViewController(currenciesViewController, animated: true, completion: nil)
+        presentViewController(newNavigationController, animated: true, completion: nil)
     }
     
     @IBAction func convertedCurrencyChangePressed(sender: UIButton) {

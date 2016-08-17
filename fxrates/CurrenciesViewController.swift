@@ -11,10 +11,19 @@ import UIKit
 class CurrenciesViewController: UITableViewController {
 
     var currencyStore: CurrencyStore!
+    var filteredCurrencies = [Currency]()
     var opener: ConverterViewController!
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancel))
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,6 +46,9 @@ class CurrenciesViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        if searchController.active && searchController.searchBar.text != "" {
+            return filteredCurrencies.count
+        }
         return currencyStore.currencies.count
     }
 
@@ -44,9 +56,14 @@ class CurrenciesViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("currencyCell", forIndexPath: indexPath)
 
-        let currency = currencyStore.currencies[indexPath.row]
+        let currency: Currency
+        if searchController.active && searchController.searchBar.text != "" {
+            currency = filteredCurrencies[indexPath.row]
+        } else {
+            currency = currencyStore.currencies[indexPath.row]
+        }
         let detail = CurrencyMapping.details(currency.code)
-        var text: String
+        let text: String
         if detail.name != "" {
             text = "\(currency.code) - \(detail.name) \(detail.flag)"
         } else {
@@ -58,9 +75,14 @@ class CurrenciesViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let currency = currencyStore.currencies[indexPath.row]
+        let currency: Currency
+        if searchController.active && searchController.searchBar.text != "" {
+            currency = filteredCurrencies[indexPath.row]
+        } else {
+            currency = currencyStore.currencies[indexPath.row]
+        }
         opener.setMainCurrency(currency)
-        dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     /*
@@ -108,4 +130,21 @@ class CurrenciesViewController: UITableViewController {
     }
     */
 
+    func filterContentsForSearchText(searchText: String) {
+        filteredCurrencies = currencyStore.currencies.filter { currency in
+            let detail = CurrencyMapping.details(currency.code)
+            return currency.code.lowercaseString.containsString(searchText.lowercaseString) || detail.name.lowercaseString.containsString(searchText.lowercaseString)
+        }
+        tableView.reloadData()
+    }
+    
+    func cancel(sender: UIBarButtonItem) -> Void {
+        navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+
+extension CurrenciesViewController: UISearchResultsUpdating {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        filterContentsForSearchText(searchController.searchBar.text!)
+    }
 }
