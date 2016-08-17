@@ -11,7 +11,7 @@ import UIKit
 class CurrenciesViewController: UITableViewController {
 
     var currencyStore: CurrencyStore!
-    var money: Money!
+    var opener: ConverterViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,12 +52,17 @@ class CurrenciesViewController: UITableViewController {
         } else {
             text = currency.code
         }
-        text += " \(money.convert(10, from: currencyStore.currencyMetadata.base!, to: currency))"
         cell.textLabel?.text = text
 
         return cell
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let currency = currencyStore.currencies[indexPath.row]
+        opener.setMainCurrency(currency)
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

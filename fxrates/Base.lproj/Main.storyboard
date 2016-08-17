@@ -22,7 +22,7 @@
                                 <rect key="frame" x="300" y="64" width="300" height="492"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A15-Ar-3PB">
-                                        <rect key="frame" x="8" y="8" width="284" height="36"/>
+                                        <rect key="frame" x="8" y="8" width="216" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="ymO-8y-MfH"/>
                                         </constraints>
@@ -31,7 +31,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-Bv-opF">
-                                        <rect key="frame" x="8" y="52" width="284" height="36"/>
+                                        <rect key="frame" x="8" y="52" width="216" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="yU6-Le-Avy"/>
                                         </constraints>
@@ -39,15 +39,41 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cao-gR-VjY">
+                                        <rect key="frame" x="232" y="14" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Kpt-Em-hjA"/>
+                                        </constraints>
+                                        <state key="normal" title="Change"/>
+                                        <connections>
+                                            <action selector="mainCurrencyChangePressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="BuG-Fo-ptg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LJU-hh-U2q">
+                                        <rect key="frame" x="232" y="52" width="60" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="umS-IA-zfm"/>
+                                        </constraints>
+                                        <state key="normal" title="Change"/>
+                                        <connections>
+                                            <action selector="convertedCurrencyChangePressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="5mz-er-bcQ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="cSB-Bv-opF" secondAttribute="trailing" constant="8" id="AWy-Fx-Yq3"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="A15-Ar-3PB" secondAttribute="trailing" id="AmT-B0-sdr"/>
+                                    <constraint firstItem="LJU-hh-U2q" firstAttribute="leading" secondItem="cSB-Bv-opF" secondAttribute="trailing" constant="8" id="9TZ-N1-Xw8"/>
+                                    <constraint firstItem="LJU-hh-U2q" firstAttribute="leading" secondItem="cSB-Bv-opF" secondAttribute="trailing" constant="8" id="Ab7-X4-HqE"/>
+                                    <constraint firstItem="Cao-gR-VjY" firstAttribute="leading" secondItem="A15-Ar-3PB" secondAttribute="trailing" constant="8" id="BuH-XM-UEf"/>
+                                    <constraint firstItem="LJU-hh-U2q" firstAttribute="top" secondItem="Cao-gR-VjY" secondAttribute="bottom" constant="8" id="F7n-Qu-TaC"/>
                                     <constraint firstItem="cSB-Bv-opF" firstAttribute="top" secondItem="A15-Ar-3PB" secondAttribute="bottom" constant="8" id="GXn-ew-q3r"/>
+                                    <constraint firstAttribute="trailing" secondItem="LJU-hh-U2q" secondAttribute="trailing" constant="8" id="Kr5-ZO-CqU"/>
+                                    <constraint firstItem="Cao-gR-VjY" firstAttribute="leading" secondItem="A15-Ar-3PB" secondAttribute="trailing" constant="8" id="T0R-HS-m0Z"/>
                                     <constraint firstItem="A15-Ar-3PB" firstAttribute="leading" secondItem="CbI-vz-hTe" secondAttribute="leadingMargin" id="ZyQ-jD-mBj"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Cao-gR-VjY" secondAttribute="trailing" id="jqC-lL-HIa"/>
                                     <constraint firstItem="A15-Ar-3PB" firstAttribute="top" secondItem="CbI-vz-hTe" secondAttribute="topMargin" id="odb-EL-TRj"/>
                                     <constraint firstItem="cSB-Bv-opF" firstAttribute="leading" secondItem="CbI-vz-hTe" secondAttribute="leading" constant="8" id="uNA-bR-hQt"/>
+                                    <constraint firstItem="Cao-gR-VjY" firstAttribute="top" secondItem="CbI-vz-hTe" secondAttribute="topMargin" constant="6" id="ydY-jo-ym6"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-yn-f3L">
@@ -134,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34r-Cf-1EQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="1372"/>
+            <point key="canvasLocation" x="276" y="1169"/>
         </scene>
         <!--Currencies-->
         <scene sceneID="DmO-jk-0yK">
@@ -160,8 +186,19 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Currencies" id="iaP-P5-ts9"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="unP-PH-mHc" id="SXF-Uz-eWS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPu-j3-sYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="unP-PH-mHc">
+                    <connections>
+                        <outlet property="delegate" destination="BBH-YF-wsw" id="ORB-a3-eZw"/>
+                        <outlet property="searchContentsController" destination="BBH-YF-wsw" id="BPc-pO-TVI"/>
+                        <outlet property="searchResultsDataSource" destination="BBH-YF-wsw" id="9oX-Cw-Iep"/>
+                        <outlet property="searchResultsDelegate" destination="BBH-YF-wsw" id="9db-U2-hB6"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1078" y="613"/>
         </scene>
@@ -174,12 +211,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="J95-PK-sRS" kind="relationship" relationship="rootViewController" id="mUO-mH-Qh0"/>
+                        <segue destination="J95-PK-sRS" kind="relationship" relationship="rootViewController" id="QJy-OH-kcF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbd-Ci-Paa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="613"/>
+            <point key="canvasLocation" x="276" y="497"/>
         </scene>
     </scenes>
 </document>

@@ -45,6 +45,23 @@ class ConverterViewController: UIViewController {
         }
     }
     
+    @IBAction func mainCurrencyChangePressed(sender: UIButton) {
+        let currenciesViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("currencies") as! CurrenciesViewController
+        currenciesViewController.currencyStore = self.currencyStore
+        currenciesViewController.opener = self
+        presentViewController(currenciesViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func convertedCurrencyChangePressed(sender: UIButton) {
+        
+    }
+    
+    func setMainCurrency(currency: Currency) -> Void {
+        currency1 = currency
+        mainCurrencyLabel.text = currency1.code
+        moneyChanged(toBeConverted)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
