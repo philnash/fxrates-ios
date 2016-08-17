@@ -53,10 +53,6 @@ class ConverterViewController: UIViewController {
         presentViewController(newNavigationController, animated: true, completion: nil)
     }
     
-    @IBAction func convertedCurrencyChangePressed(sender: UIButton) {
-        
-    }
-    
     func setMainCurrency(currency: Currency) -> Void {
         currency1 = currency
         mainCurrencyLabel.text = currency1.code
