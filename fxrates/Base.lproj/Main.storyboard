@@ -86,8 +86,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-Bv-opF">
-                                        <rect key="frame" x="8" y="52" width="216" height="36"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSB-Bv-opF">
+                                        <rect key="frame" x="8" y="52" width="284" height="36"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="yU6-Le-Avy"/>
                                         </constraints>
@@ -110,6 +110,7 @@
                                 <constraints>
                                     <constraint firstItem="Cao-gR-VjY" firstAttribute="leading" secondItem="A15-Ar-3PB" secondAttribute="trailing" constant="8" id="BuH-XM-UEf"/>
                                     <constraint firstItem="cSB-Bv-opF" firstAttribute="top" secondItem="A15-Ar-3PB" secondAttribute="bottom" constant="8" id="GXn-ew-q3r"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="cSB-Bv-opF" secondAttribute="trailing" id="QK8-Qe-6Eb"/>
                                     <constraint firstItem="Cao-gR-VjY" firstAttribute="leading" secondItem="A15-Ar-3PB" secondAttribute="trailing" constant="8" id="T0R-HS-m0Z"/>
                                     <constraint firstItem="A15-Ar-3PB" firstAttribute="leading" secondItem="CbI-vz-hTe" secondAttribute="leadingMargin" id="ZyQ-jD-mBj"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="Cao-gR-VjY" secondAttribute="trailing" id="jqC-lL-HIa"/>

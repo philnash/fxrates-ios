@@ -13,18 +13,19 @@ class CurrenciesViewController: UITableViewController {
     var currencyStore: CurrencyStore!
     var filteredCurrencies = [Currency]()
     var opener: ConverterViewController!
-    let searchController = UISearchController(searchResultsController: nil)
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancel))
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -140,6 +141,10 @@ class CurrenciesViewController: UITableViewController {
     
     func cancel(sender: UIBarButtonItem) -> Void {
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    deinit {
+        self.searchController?.view.removeFromSuperview()
     }
 }
 
