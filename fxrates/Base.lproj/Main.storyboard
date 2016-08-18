@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsH-yn-f3L">
-                                <rect key="frame" x="0.0" y="64" width="300" height="492"/>
+                                <rect key="frame" x="0.0" y="64" width="300" height="491"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6Y-2g-fwQ">
                                         <rect key="frame" x="8" y="52" width="284" height="36"/>
@@ -83,7 +83,7 @@
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-vz-hTe">
-                                <rect key="frame" x="300" y="64" width="300" height="492"/>
+                                <rect key="frame" x="300" y="64" width="300" height="491"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A15-Ar-3PB">
                                         <rect key="frame" x="8" y="8" width="216" height="36"/>
@@ -133,9 +133,9 @@
                             <constraint firstItem="CbI-vz-hTe" firstAttribute="leading" secondItem="xsH-yn-f3L" secondAttribute="trailing" id="17C-il-bk3"/>
                             <constraint firstItem="CbI-vz-hTe" firstAttribute="leading" secondItem="xsH-yn-f3L" secondAttribute="trailing" id="4Db-Av-Hmh"/>
                             <constraint firstItem="AIO-2l-NPu" firstAttribute="leading" secondItem="sjj-ZI-c3w" secondAttribute="leading" id="4Vf-J0-5JI"/>
-                            <constraint firstItem="AIO-2l-NPu" firstAttribute="top" secondItem="CbI-vz-hTe" secondAttribute="bottom" id="85O-Hu-Vvz"/>
+                            <constraint firstItem="AIO-2l-NPu" firstAttribute="top" secondItem="CbI-vz-hTe" secondAttribute="bottom" constant="1" id="85O-Hu-Vvz"/>
                             <constraint firstAttribute="trailing" secondItem="CbI-vz-hTe" secondAttribute="trailing" id="8HN-GB-YVr"/>
-                            <constraint firstItem="AIO-2l-NPu" firstAttribute="top" secondItem="xsH-yn-f3L" secondAttribute="bottom" id="HUB-aO-wXQ"/>
+                            <constraint firstItem="AIO-2l-NPu" firstAttribute="top" secondItem="xsH-yn-f3L" secondAttribute="bottom" constant="1" id="HUB-aO-wXQ"/>
                             <constraint firstAttribute="trailing" secondItem="AIO-2l-NPu" secondAttribute="trailing" id="IrT-b5-pQM"/>
                             <constraint firstItem="CbI-vz-hTe" firstAttribute="top" secondItem="kPC-tf-ogN" secondAttribute="bottom" id="VMI-vP-NEz"/>
                             <constraint firstItem="goj-8f-zsd" firstAttribute="top" secondItem="AIO-2l-NPu" secondAttribute="bottom" id="hR9-Mi-MoW"/>
@@ -176,12 +176,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47L-gu-rho">
-                                <rect key="frame" x="555" y="20" width="25" height="30"/>
+                                <rect key="frame" x="550" y="20" width="30" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="MPc-Ld-ULb"/>
-                                    <constraint firstAttribute="height" constant="30" id="PbH-2C-kBE"/>
+                                    <constraint firstAttribute="width" constant="30" id="MPc-Ld-ULb"/>
+                                    <constraint firstAttribute="height" constant="48" id="PbH-2C-kBE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <state key="normal" title="×"/>
                                 <connections>
                                     <action selector="closeButtonPressed:" destination="E8r-hY-myS" eventType="touchUpInside" id="ICU-Fn-E1B"/>

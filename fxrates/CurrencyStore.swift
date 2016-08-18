@@ -127,7 +127,7 @@ class CurrencyStore {
         let filteredCurrencies = currencies.filter { (currency) -> Bool in
             return currency.code == code
         }
-        return filteredCurrencies[0]
+        return filteredCurrencies.first
     }
 
 }

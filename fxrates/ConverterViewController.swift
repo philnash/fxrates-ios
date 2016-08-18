@@ -26,8 +26,6 @@ class ConverterViewController: UIViewController {
         formatter.maximumFractionDigits = 2
         return formatter
     }()
-
-    
     
     @IBOutlet var toBeConverted: UITextField!
     @IBOutlet var mainCurrencyLabel: UILabel!
@@ -71,10 +69,14 @@ class ConverterViewController: UIViewController {
         let tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tapRecogniser)
         
-        currency1 = currencyStore.currencyFromCode("USD")!
-        mainCurrencyLabel.text = currency1.code
-        currency2 = currencyStore.currencyFromCode("GBP")!
-        convertedCurrencyLabel.text = currency2.code
+        if let c1 = currencyStore.currencyFromCode("USD") {
+            currency1 = c1
+            mainCurrencyLabel.text = currency1.code
+        }
+        if let c2 = currencyStore.currencyFromCode("GBP") {
+            currency2 = c2
+            convertedCurrencyLabel.text = currency2.code
+        }
         
         currenciesReloaded()
         
