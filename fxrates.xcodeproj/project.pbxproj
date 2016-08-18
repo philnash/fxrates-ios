@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */; };
 		D7296ED91D539CAA003567BC /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7296ED81D539CAA003567BC /* Currency.swift */; };
+		D750BFF21D65CA7B007088E4 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D750BFF11D65CA7B007088E4 /* AboutController.swift */; };
 		D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D773BA601D50B5FD000FF636 /* AppDelegate.swift */; };
 		D773BA661D50B5FD000FF636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D773BA641D50B5FD000FF636 /* Main.storyboard */; };
 		D773BA681D50B5FD000FF636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D773BA671D50B5FD000FF636 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
 		D7296ED81D539CAA003567BC /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		D750BFF11D65CA7B007088E4 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		D773BA5D1D50B5FD000FF636 /* fxrates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fxrates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D773BA601D50B5FD000FF636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D773BA651D50B5FD000FF636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				D773BA601D50B5FD000FF636 /* AppDelegate.swift */,
 				D773BA641D50B5FD000FF636 /* Main.storyboard */,
 				D7EBD9DA1D6319EE0012AAEC /* ConverterViewController.swift */,
+				D750BFF11D65CA7B007088E4 /* AboutController.swift */,
 				D7296ED81D539CAA003567BC /* Currency.swift */,
 				D777F0AF1D5B58D40003D946 /* CurrencyStore.swift */,
 				D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */,
@@ -225,6 +228,7 @@
 				D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */,
 				D773BA611D50B5FD000FF636 /* AppDelegate.swift in Sources */,
 				D7EBD9DB1D6319EE0012AAEC /* ConverterViewController.swift in Sources */,
+				D750BFF21D65CA7B007088E4 /* AboutController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

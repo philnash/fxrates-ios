@@ -53,6 +53,12 @@ class ConverterViewController: UIViewController {
         presentViewController(newNavigationController, animated: true, completion: nil)
     }
     
+    @IBAction func infoButtonPressed(sender: UIButton) {
+        let aboutController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("aboutView") as! AboutController
+        aboutController.currencyMetadata = currencyStore.currencyMetadata
+        presentViewController(aboutController, animated: true, completion: nil)
+    }
+    
     func setMainCurrency(currency: Currency) -> Void {
         currency1 = currency
         mainCurrencyLabel.text = currency1.code

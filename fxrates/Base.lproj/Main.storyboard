@@ -71,7 +71,15 @@
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="UYm-T5-hMG"/>
-                                    <barButtonItem title="About" id="Vxm-yf-MO7"/>
+                                    <barButtonItem style="plain" id="hUP-N9-LFG">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="g6J-1K-p8y">
+                                            <rect key="frame" x="558" y="11" width="22" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="infoButtonPressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="Cyk-ds-BqT"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CbI-vz-hTe">
@@ -148,6 +156,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="34r-Cf-1EQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="276" y="1169"/>
+        </scene>
+        <!--About Controller-->
+        <scene sceneID="O1o-j8-6aV">
+            <objects>
+                <viewController storyboardIdentifier="aboutView" id="E8r-hY-myS" customClass="AboutController" customModule="fxrates" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gdU-Oc-tWR"/>
+                        <viewControllerLayoutGuide type="bottom" id="buY-zF-xS9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sps-BX-iEx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About FxRates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djF-4X-PQD">
+                                <rect key="frame" x="20" y="70" width="560" height="26"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47L-gu-rho">
+                                <rect key="frame" x="555" y="20" width="25" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="MPc-Ld-ULb"/>
+                                    <constraint firstAttribute="height" constant="30" id="PbH-2C-kBE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="×"/>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="E8r-hY-myS" eventType="touchUpInside" id="ICU-Fn-E1B"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-mY-96l">
+                                <rect key="frame" x="150" y="116" width="300" height="118"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Y62-S3-mAM"/>
+                                </constraints>
+                                <string key="text">FxRates was created by Phil Nash, a developer evangelist at Twilio.
+
+https://philna.sh
+https://twitter.com/philnash</string>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Disclaimer" translatesAutoresizingMaskIntoConstraints="NO" id="CWd-PD-hSQ">
+                                <rect key="frame" x="150" y="499" width="300" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="7Nx-G9-l4G"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="FEl-74-csk"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="License" translatesAutoresizingMaskIntoConstraints="NO" id="gWN-LY-Nlp">
+                                <rect key="frame" x="150" y="540" width="300" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="1l3-ud-ZHI"/>
+                                    <constraint firstAttribute="width" constant="300" id="EJc-jO-ObQ"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14117647058823529" green="0.5607843137254902" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="djF-4X-PQD" firstAttribute="top" secondItem="gdU-Oc-tWR" secondAttribute="bottom" constant="50" id="6hT-ym-qnP"/>
+                            <constraint firstItem="FBE-mY-96l" firstAttribute="top" secondItem="djF-4X-PQD" secondAttribute="bottom" constant="20" id="B1y-1b-kvc"/>
+                            <constraint firstItem="gWN-LY-Nlp" firstAttribute="top" secondItem="CWd-PD-hSQ" secondAttribute="bottom" constant="8" id="BaO-YU-pVO"/>
+                            <constraint firstItem="FBE-mY-96l" firstAttribute="centerX" secondItem="Sps-BX-iEx" secondAttribute="centerX" id="Dzy-Fd-gsr"/>
+                            <constraint firstItem="47L-gu-rho" firstAttribute="top" secondItem="gdU-Oc-tWR" secondAttribute="bottom" id="Gv6-7Q-mzn"/>
+                            <constraint firstItem="gWN-LY-Nlp" firstAttribute="top" secondItem="CWd-PD-hSQ" secondAttribute="bottom" constant="8" id="Iec-hR-tsc"/>
+                            <constraint firstItem="gWN-LY-Nlp" firstAttribute="centerX" secondItem="Sps-BX-iEx" secondAttribute="centerX" id="Jo4-7a-L95"/>
+                            <constraint firstItem="buY-zF-xS9" firstAttribute="top" secondItem="gWN-LY-Nlp" secondAttribute="bottom" constant="28" id="Jtb-cg-Xz1"/>
+                            <constraint firstItem="CWd-PD-hSQ" firstAttribute="centerX" secondItem="Sps-BX-iEx" secondAttribute="centerX" id="YYL-6j-Zux"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="djF-4X-PQD" secondAttribute="trailing" id="kGu-GF-1rr"/>
+                            <constraint firstItem="47L-gu-rho" firstAttribute="trailing" secondItem="Sps-BX-iEx" secondAttribute="trailingMargin" id="l1H-jy-KGe"/>
+                            <constraint firstItem="djF-4X-PQD" firstAttribute="leading" secondItem="Sps-BX-iEx" secondAttribute="leadingMargin" id="omi-Eh-sfh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutText" destination="FBE-mY-96l" id="bt9-Cr-aIC"/>
+                        <outlet property="disclaimerText" destination="CWd-PD-hSQ" id="fe5-f9-OM9"/>
+                        <outlet property="licenseText" destination="gWN-LY-Nlp" id="fVr-vU-zHx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVU-AI-wYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1667" y="497"/>
         </scene>
         <!--Choose currency-->
         <scene sceneID="Br4-i3-vul">
