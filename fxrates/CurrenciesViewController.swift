@@ -25,6 +25,7 @@ class CurrenciesViewController: UITableViewController {
         tableView.tableHeaderView = searchController.searchBar
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Cancel, target: self, action: #selector(cancel))
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.whiteColor()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -64,13 +65,12 @@ class CurrenciesViewController: UITableViewController {
             currency = currencyStore.currencies[indexPath.row]
         }
         let detail = CurrencyMapping.details(currency.code)
-        let text: String
         if detail.name != "" {
-            text = "\(currency.code) - \(detail.name) \(detail.flag)"
+            cell.textLabel?.text = "\(currency.code) - \(detail.name)"
+            cell.detailTextLabel?.text = detail.flag
         } else {
-            text = currency.code
+            cell.textLabel?.text = currency.code
         }
-        cell.textLabel?.text = text
 
         return cell
     }
