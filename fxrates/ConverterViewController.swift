@@ -11,8 +11,7 @@ import UIKit
 class ConverterViewController: UIViewController {
     var currencyStore: CurrencyStore!
     var money: Money!
-    var currency1 = Currency(code: "GBP", rate: 1)
-    var currency2 = Currency(code: "GBP", rate: 1)
+    var mainCurrency: MainCurrency!
     
     let updatedDateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -29,18 +28,16 @@ class ConverterViewController: UIViewController {
     
     @IBOutlet var toBeConverted: UITextField!
     @IBOutlet var mainCurrencyLabel: UILabel!
-    @IBOutlet var converted: UILabel!
-    @IBOutlet var convertedCurrencyLabel: UILabel!
     @IBOutlet var lastUpdatedLabel: UILabel!
     
     @IBAction func moneyChanged(sender: UITextField) {
-        if let text = toBeConverted.text, amount = Double(text) {
-            let convertedAmountDouble = money.convert(amount, from: currency1, to: currency2)
-            let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)
-            converted.text = convertedAmountString
-        } else {
-            converted.text = "0"
-        }
+//        if let text = toBeConverted.text, amount = Double(text) {
+//            let convertedAmountDouble = money.convert(amount, from: currency1, to: currency2)
+//            let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)
+//            converted.text = convertedAmountString
+//        } else {
+//            converted.text = "0"
+//        }
     }
     
     @IBAction func mainCurrencyChangePressed(sender: UIButton) {
@@ -57,30 +54,19 @@ class ConverterViewController: UIViewController {
         presentViewController(aboutController, animated: true, completion: nil)
     }
     
-    func setMainCurrency(currency: Currency) -> Void {
-        currency1 = currency
-        mainCurrencyLabel.text = currency1.code
-        moneyChanged(toBeConverted)
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let currency = mainCurrency.currency {
+            mainCurrencyLabel.text = currency.code
+            currenciesReloaded()
+            moneyChanged(toBeConverted)
+        }
+        
         let tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tapRecogniser)
-        
-        if let c1 = currencyStore.currencyFromCode("USD") {
-            currency1 = c1
-            mainCurrencyLabel.text = currency1.code
-        }
-        if let c2 = currencyStore.currencyFromCode("GBP") {
-            currency2 = c2
-            convertedCurrencyLabel.text = currency2.code
-        }
-        
-        currenciesReloaded()
-        
-        moneyChanged(toBeConverted)
         
         currencyStore.getData { (result) -> Void in
             switch result {
@@ -112,5 +98,14 @@ class ConverterViewController: UIViewController {
         if let lastUpdated = currencyStore.currencyMetadata.lastUpdated {
             lastUpdatedLabel.text = "Last updated: \(updatedDateFormatter.stringFromDate(lastUpdated))"
         }
+    }
+}
+
+extension ConverterViewController: MainCurrencyOwner {
+    func setMainCurrency(currency: Currency) -> Void {
+        mainCurrency.currency = currency
+        mainCurrencyLabel.text = currency.code
+        moneyChanged(toBeConverted)
+        mainCurrency.saveData()
     }
 }

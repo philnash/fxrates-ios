@@ -12,7 +12,7 @@ class CurrenciesViewController: UITableViewController {
 
     var currencyStore: CurrencyStore!
     var filteredCurrencies = [Currency]()
-    var opener: ConverterViewController!
+    var opener: MainCurrencyOwner!
     var searchController: UISearchController!
     
     override func viewDidLoad() {

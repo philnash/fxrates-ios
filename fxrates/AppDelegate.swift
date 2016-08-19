@@ -18,10 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let currencyStore = CurrencyStore()
+        let mainCurrency = MainCurrency()
         
-        let navController = window!.rootViewController as! UINavigationController
-        let converterViewController = navController.topViewController as! ConverterViewController
-        converterViewController.currencyStore = currencyStore
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        if mainCurrency.currency != nil && currencyStore.currencies.count > 0 {
+            let converterViewController = mainStoryboard.instantiateViewControllerWithIdentifier("converterViewController") as! ConverterViewController
+            converterViewController.currencyStore = currencyStore
+            converterViewController.mainCurrency = mainCurrency
+            let mainNavController = UINavigationController(rootViewController: converterViewController)
+            self.window?.rootViewController = mainNavController
+        } else {
+            let gettingStartedController = mainStoryboard.instantiateViewControllerWithIdentifier("gettingStarted") as! GettingStartedController
+            gettingStartedController.currencyStore = currencyStore
+            gettingStartedController.mainCurrency = mainCurrency
+            self.window?.rootViewController = gettingStartedController
+        }
+        
+        self.window?.makeKeyAndVisible()
         
         return true
     }
