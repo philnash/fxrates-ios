@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ConverterViewController: UIViewController {
+class ConverterViewController: UIViewController{
     var currencyStore: CurrencyStore!
     var money: Money!
+    var amount: Double!
     var mainCurrency: MainCurrency!
+    var exchangeStore: ExchangeStore!
     
     let updatedDateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
@@ -29,8 +31,15 @@ class ConverterViewController: UIViewController {
     @IBOutlet var toBeConverted: UITextField!
     @IBOutlet var mainCurrencyLabel: UILabel!
     @IBOutlet var lastUpdatedLabel: UILabel!
+    @IBOutlet var tableView: UITableView!
     
     @IBAction func moneyChanged(sender: UITextField) {
+        if let text = toBeConverted.text, a = Double(text) {
+            amount = a
+        } else {
+            amount = 0
+        }
+        tableView.reloadData()
 //        if let text = toBeConverted.text, amount = Double(text) {
 //            let convertedAmountDouble = money.convert(amount, from: currency1, to: currency2)
 //            let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)
@@ -54,10 +63,13 @@ class ConverterViewController: UIViewController {
         presentViewController(aboutController, animated: true, completion: nil)
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        exchangeStore = ExchangeStore()
+        exchangeStore.currencies.append(currencyStore.currencies.first!)
+        tableView.delegate = self
+        tableView.dataSource = self
         
         if let currency = mainCurrency.currency {
             mainCurrencyLabel.text = currency.code
@@ -109,3 +121,41 @@ extension ConverterViewController: MainCurrencyOwner {
         mainCurrency.saveData()
     }
 }
+
+extension ConverterViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return exchangeStore.currencies.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("exchangeCell", forIndexPath: indexPath)
+        
+        let currency = exchangeStore.currencies[indexPath.row]
+        let detail = CurrencyMapping.details(currency.code)
+        let convertedAmountDouble = money.convert(self.amount, from: mainCurrency.currency!, to: currency)
+        let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)!
+        if detail.name != "" {
+            cell.textLabel?.text = "\(currency.code) \(convertedAmountString)"
+            cell.detailTextLabel?.text = detail.name
+        } else {
+            cell.textLabel?.text = currency.code
+        }
+        return cell
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
