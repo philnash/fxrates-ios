@@ -72,6 +72,7 @@ class GettingStartedController: UIViewController {
     
     func setMainCurrency(currency: Currency) {
         mainCurrency.currency = currency
+        mainCurrency.saveData()
         modalView?.dismissViewControllerAnimated(true) {
             self.modalView = nil
             self.moveToMainNavView()
