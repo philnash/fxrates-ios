@@ -167,7 +167,7 @@ extension ConverterViewController: UITableViewDelegate, UITableViewDataSource {
         let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)!
         let amountString = currencyStringFormatter.stringFromNumber(self.amount)!
         if detail.name != "" {
-            cell.textLabel?.text = "\(amountString) \(currency.code) is"
+            cell.textLabel?.text = "\(amountString) \(currency.code) is "
             cell.detailTextLabel?.text = "\(convertedAmountString) \(mainCurrency.currency!.code)"
         } else {
             cell.textLabel?.text = currency.code
