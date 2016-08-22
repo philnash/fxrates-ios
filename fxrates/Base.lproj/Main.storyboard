@@ -253,6 +253,9 @@
                                             <rect key="frame" x="558" y="11" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="tintColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal">
+                                                <color key="titleColor" red="0.20392156862745098" green="0.59215686274509804" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                             <connections>
                                                 <action selector="infoButtonPressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="Cyk-ds-BqT"/>
                                             </connections>
