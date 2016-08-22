@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ConverterViewController: UIViewController{
+class ConverterViewController: UIViewController, UIGestureRecognizerDelegate{
     var currencyStore: CurrencyStore!
     var money: Money!
     var amount: Double!
@@ -75,6 +75,16 @@ class ConverterViewController: UIViewController{
         presentViewController(newNavigationController, animated: true, completion: nil)
     }
     
+    @IBAction func editCurrenciesButtonPressed(sender: UIButton) {
+        if tableView.editing {
+            tableView.setEditing(false, animated: true)
+            sender.setTitle("Edit currencies", forState: .Normal)
+        } else {
+            tableView.setEditing(true, animated: true)
+            sender.setTitle("Done", forState: .Normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -90,6 +100,7 @@ class ConverterViewController: UIViewController{
         
         let tapRecogniser = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.view.addGestureRecognizer(tapRecogniser)
+        tapRecogniser.delegate = self
         
         currencyStore.getData { (result) -> Void in
             switch result {
@@ -101,12 +112,13 @@ class ConverterViewController: UIViewController{
             }
             
         }
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if let view = touch.view where String(view.dynamicType) == "UITableViewCellEditControl" {
+            return false
+        }
+        return true
     }
     
     func handleTap(recognizer: UITapGestureRecognizer) {
@@ -161,6 +173,20 @@ extension ConverterViewController: UITableViewDelegate, UITableViewDataSource {
             cell.textLabel?.text = currency.code
         }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            exchangeStore.currencies.removeAtIndex(indexPath.row)
+            exchangeStore.saveData()
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        }
     }
 }
 

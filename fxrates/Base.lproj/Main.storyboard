@@ -158,19 +158,33 @@
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bjF-dG-0LW">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="352"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tov-1Q-Hji">
-                                                    <rect key="frame" x="0.0" y="112" width="600" height="44"/>
+                                                <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" id="hQN-R4-HSl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Add currency">
-                                                        <color key="titleColor" red="0.20392156862745098" green="0.59215686274509804" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="addCurrencyButtonPressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="gEs-BG-mzv"/>
-                                                    </connections>
-                                                </button>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tov-1Q-Hji">
+                                                            <rect key="frame" x="0.0" y="0.0" width="296" height="44"/>
+                                                            <state key="normal" title="Add currency">
+                                                                <color key="titleColor" red="0.20392156862745098" green="0.59215686274509804" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="addCurrencyButtonPressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="gEs-BG-mzv"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-Sd-IAL">
+                                                            <rect key="frame" x="304" y="0.0" width="296" height="44"/>
+                                                            <state key="normal" title="Edit currencies">
+                                                                <color key="titleColor" red="0.20392156859999999" green="0.59215686270000001" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="editCurrenciesButtonPressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="fY5-N7-k9S"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exchangeCell" textLabel="URw-Cs-sHG" detailTextLabel="uO8-g4-DId" style="IBUITableViewCellStyleValue1" id="SfB-KB-0Kw">
-                                                        <rect key="frame" x="0.0" y="50" width="600" height="44"/>
+                                                        <rect key="frame" x="0.0" y="94" width="600" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SfB-KB-0Kw" id="bxy-7D-Wbu">
                                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
