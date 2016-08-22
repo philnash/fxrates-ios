@@ -185,8 +185,18 @@ extension ConverterViewController: UITableViewDelegate, UITableViewDataSource {
             exchangeStore.currencies.removeAtIndex(indexPath.row)
             exchangeStore.saveData()
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
         }
+    }
+    
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        let movingCurrency = exchangeStore.currencies[fromIndexPath.row]
+        exchangeStore.currencies.removeAtIndex(fromIndexPath.row)
+        exchangeStore.currencies.insert(movingCurrency, atIndex: toIndexPath.row)
+        exchangeStore.saveData()
     }
 }
 
