@@ -10,7 +10,6 @@
 		D7296ED71D50F31F003567BC /* CurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */; };
 		D7296ED91D539CAA003567BC /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7296ED81D539CAA003567BC /* Currency.swift */; };
 		D729A8E21D6721AE0070A52B /* GettingStartedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729A8E11D6721AE0070A52B /* GettingStartedController.swift */; };
-		D729A8E41D6731780070A52B /* MainCurrencyOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729A8E31D6731780070A52B /* MainCurrencyOwner.swift */; };
 		D729A8E81D6747DA0070A52B /* ExchangeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D729A8E71D6747DA0070A52B /* ExchangeStore.swift */; };
 		D750BFF21D65CA7B007088E4 /* AboutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D750BFF11D65CA7B007088E4 /* AboutController.swift */; };
 		D750BFF41D65F000007088E4 /* MainCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = D750BFF31D65F000007088E4 /* MainCurrency.swift */; };
@@ -40,8 +39,7 @@
 		D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrenciesViewController.swift; sourceTree = "<group>"; };
 		D7296ED81D539CAA003567BC /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		D729A8E11D6721AE0070A52B /* GettingStartedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettingStartedController.swift; sourceTree = "<group>"; };
-		D729A8E31D6731780070A52B /* MainCurrencyOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCurrencyOwner.swift; sourceTree = "<group>"; };
-		D729A8E71D6747DA0070A52B /* ExchangeStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeStore.swift; sourceTree = "<group>"; };
+		D729A8E71D6747DA0070A52B /* ExchangeStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExchangeStore.swift; path = ../ExchangeStore.swift; sourceTree = "<group>"; };
 		D750BFF11D65CA7B007088E4 /* AboutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutController.swift; sourceTree = "<group>"; };
 		D750BFF31D65F000007088E4 /* MainCurrency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCurrency.swift; sourceTree = "<group>"; };
 		D773BA5D1D50B5FD000FF636 /* fxrates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fxrates.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,7 +79,6 @@
 		D773BA541D50B5FD000FF636 = {
 			isa = PBXGroup;
 			children = (
-				D729A8E71D6747DA0070A52B /* ExchangeStore.swift */,
 				D773BA5F1D50B5FD000FF636 /* fxrates */,
 				D773BA741D50B5FD000FF636 /* fxratesTests */,
 				D773BA5E1D50B5FD000FF636 /* Products */,
@@ -100,6 +97,7 @@
 		D773BA5F1D50B5FD000FF636 /* fxrates */ = {
 			isa = PBXGroup;
 			children = (
+				D729A8E71D6747DA0070A52B /* ExchangeStore.swift */,
 				D773BA601D50B5FD000FF636 /* AppDelegate.swift */,
 				D729A8E11D6721AE0070A52B /* GettingStartedController.swift */,
 				D773BA641D50B5FD000FF636 /* Main.storyboard */,
@@ -110,7 +108,6 @@
 				D750BFF31D65F000007088E4 /* MainCurrency.swift */,
 				D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */,
 				D7296ED61D50F31F003567BC /* CurrenciesViewController.swift */,
-				D729A8E31D6731780070A52B /* MainCurrencyOwner.swift */,
 				D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */,
 				D777F0B51D5E23DE0003D946 /* Money.swift */,
 				D773BA671D50B5FD000FF636 /* Assets.xcassets */,
@@ -233,7 +230,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D777F0B41D5DFAAB0003D946 /* CurencyMapping.swift in Sources */,
-				D729A8E41D6731780070A52B /* MainCurrencyOwner.swift in Sources */,
 				D7296ED91D539CAA003567BC /* Currency.swift in Sources */,
 				D777F0B61D5E23DE0003D946 /* Money.swift in Sources */,
 				D750BFF41D65F000007088E4 /* MainCurrency.swift in Sources */,

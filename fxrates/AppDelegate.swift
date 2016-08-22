@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let converterViewController = mainStoryboard.instantiateViewControllerWithIdentifier("converterViewController") as! ConverterViewController
             converterViewController.currencyStore = currencyStore
             converterViewController.mainCurrency = mainCurrency
-            let mainNavController = UINavigationController(rootViewController: converterViewController)
+            let mainNavController = mainStoryboard.instantiateViewControllerWithIdentifier("mainNav") as! UINavigationController
+            mainNavController.setViewControllers([converterViewController], animated: false)
             self.window?.rootViewController = mainNavController
         } else {
             let gettingStartedController = mainStoryboard.instantiateViewControllerWithIdentifier("gettingStarted") as! GettingStartedController

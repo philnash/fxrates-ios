@@ -12,7 +12,7 @@ class CurrenciesViewController: UITableViewController {
 
     var currencyStore: CurrencyStore!
     var filteredCurrencies = [Currency]()
-    var opener: MainCurrencyOwner!
+    var didSelectCurrency: ((Currency) -> Void)!
     var searchController: UISearchController!
     
     override func viewDidLoad() {
@@ -42,12 +42,10 @@ class CurrenciesViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if searchController.active && searchController.searchBar.text != "" {
             return filteredCurrencies.count
         }
@@ -82,7 +80,7 @@ class CurrenciesViewController: UITableViewController {
         } else {
             currency = currencyStore.currencies[indexPath.row]
         }
-        opener.setMainCurrency(currency)
+        didSelectCurrency(currency)
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     

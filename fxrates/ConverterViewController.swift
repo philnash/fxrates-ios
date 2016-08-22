@@ -53,7 +53,9 @@ class ConverterViewController: UIViewController{
         let newNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("currencySearch") as! UINavigationController
         let currenciesViewController = newNavigationController.topViewController as! CurrenciesViewController
         currenciesViewController.currencyStore = self.currencyStore
-        currenciesViewController.opener = self
+        currenciesViewController.didSelectCurrency = { (currency: Currency) in
+            self.setMainCurrency(currency)
+        }
         presentViewController(newNavigationController, animated: true, completion: nil)
     }
     
@@ -63,11 +65,20 @@ class ConverterViewController: UIViewController{
         presentViewController(aboutController, animated: true, completion: nil)
     }
     
+    @IBAction func addCurrencyButtonPressed(sender: UIButton) {
+        let newNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("currencySearch") as! UINavigationController
+        let currenciesViewController = newNavigationController.topViewController as! CurrenciesViewController
+        currenciesViewController.currencyStore = self.currencyStore
+        currenciesViewController.didSelectCurrency = { (currency: Currency) in
+            self.addNewCurrency(currency)
+        }
+        presentViewController(newNavigationController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         exchangeStore = ExchangeStore()
-        exchangeStore.currencies.append(currencyStore.currencies.first!)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -111,14 +122,18 @@ class ConverterViewController: UIViewController{
             lastUpdatedLabel.text = "Last updated: \(updatedDateFormatter.stringFromDate(lastUpdated))"
         }
     }
-}
-
-extension ConverterViewController: MainCurrencyOwner {
+    
     func setMainCurrency(currency: Currency) -> Void {
         mainCurrency.currency = currency
         mainCurrencyLabel.text = currency.code
         moneyChanged(toBeConverted)
         mainCurrency.saveData()
+    }
+    
+    func addNewCurrency(currency: Currency) -> Void {
+        exchangeStore.currencies.append(currency)
+        exchangeStore.saveData()
+        tableView.reloadData()
     }
 }
 
@@ -136,11 +151,12 @@ extension ConverterViewController: UITableViewDelegate, UITableViewDataSource {
         
         let currency = exchangeStore.currencies[indexPath.row]
         let detail = CurrencyMapping.details(currency.code)
-        let convertedAmountDouble = money.convert(self.amount, from: mainCurrency.currency!, to: currency)
+        let convertedAmountDouble = money.convert(self.amount, from: currency, to: mainCurrency.currency!)
         let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)!
+        let amountString = currencyStringFormatter.stringFromNumber(self.amount)!
         if detail.name != "" {
-            cell.textLabel?.text = "\(currency.code) \(convertedAmountString)"
-            cell.detailTextLabel?.text = detail.name
+            cell.textLabel?.text = "\(amountString) \(currency.code) is"
+            cell.detailTextLabel?.text = "\(convertedAmountString) \(mainCurrency.currency!.code)"
         } else {
             cell.textLabel?.text = currency.code
         }

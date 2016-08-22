@@ -37,7 +37,9 @@ class GettingStartedController: UIViewController {
         let newNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("currencySearch") as! UINavigationController
         let currenciesViewController = newNavigationController.topViewController as! CurrenciesViewController
         currenciesViewController.currencyStore = self.currencyStore
-        currenciesViewController.opener = self
+        currenciesViewController.didSelectCurrency = { (currency: Currency) in
+            self.setMainCurrency(currency)
+        }
         modalView = newNavigationController
         presentViewController(newNavigationController, animated: true, completion: nil)
     }
@@ -67,9 +69,7 @@ class GettingStartedController: UIViewController {
             self.removeFromParentViewController()
         }
     }
-}
-
-extension GettingStartedController: MainCurrencyOwner {
+    
     func setMainCurrency(currency: Currency) {
         mainCurrency.currency = currency
         modalView?.dismissViewControllerAnimated(true) {

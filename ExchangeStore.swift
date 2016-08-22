@@ -24,4 +24,8 @@ class ExchangeStore {
             currencies = [Currency]()
         }
     }
+    
+    func saveData() -> Bool {
+        return NSKeyedArchiver.archiveRootObject(currencies, toFile: ExchangeStore.archiveURL.path!)
+    }
 }
