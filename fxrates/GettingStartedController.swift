@@ -17,9 +17,18 @@ class GettingStartedController: UIViewController {
     @IBOutlet var loadingLabel: UILabel!
     @IBOutlet var selectCurrencyButton: UIButton!
     @IBOutlet var tryAgainButton: UIButton!
+    @IBOutlet var selectCurrencyView: UIView!
+    @IBOutlet var tryAgainView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectCurrencyView.layer.borderWidth = 1
+        selectCurrencyView.layer.borderColor = UIColor.whiteColor().CGColor
+        selectCurrencyView.layer.cornerRadius = 6
+        tryAgainView.layer.borderWidth = 1
+        tryAgainView.layer.borderColor = UIColor.whiteColor().CGColor
+        tryAgainView.layer.cornerRadius = 6
         
         currencyStore.getData { (result) -> Void in
             switch result {
@@ -47,7 +56,7 @@ class GettingStartedController: UIViewController {
     
     @IBAction func tryAgainButtonPressed(sender: UIButton) {
         loadingIndicator.startAnimating()
-        tryAgainButton.hidden = true
+        tryAgainView.hidden = true
         loadingLabel.text = "Loading currency data..."
         currencyStore.getData { (result) -> Void in
             switch result {
@@ -66,13 +75,13 @@ class GettingStartedController: UIViewController {
         loadingIndicator.stopAnimating()
         loadingIndicator.removeFromSuperview()
         loadingLabel.removeFromSuperview()
-        selectCurrencyButton.hidden = false
+        selectCurrencyView.hidden = false
     }
     
     func currenciesDidNotLoad(error: ErrorType) {
         loadingIndicator.stopAnimating()
         loadingLabel.text = "There was an error fetching the latest currency data"
-        tryAgainButton.hidden = false
+        tryAgainView.hidden = false
         print("there was an error fetching the latest currency data")
         print(error)
     }

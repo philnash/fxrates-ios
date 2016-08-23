@@ -30,12 +30,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading currency data..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkh-g0-XHF">
-                                <rect key="frame" x="217" y="318" width="166" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to FxRates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-c0-Kwa">
                                 <rect key="frame" x="185" y="70" width="230" height="30"/>
                                 <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans" pointSize="22"/>
@@ -45,42 +39,71 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="BDb-vg-HzE">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19s-gs-4RM">
-                                <rect key="frame" x="268" y="285" width="63" height="30"/>
-                                <color key="tintColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="titleEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                                <state key="normal" title="Try again">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="tryAgainButtonPressed:" destination="g0h-DW-DOi" eventType="touchUpInside" id="WSf-dm-Ukx"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-TJ-Qn8">
-                                <rect key="frame" x="209" y="291" width="183" height="18"/>
-                                <color key="tintColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
-                                <state key="normal" title="Select your home currency">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectMainCurrency:" destination="g0h-DW-DOi" eventType="touchUpInside" id="18l-VI-ygD"/>
-                                </connections>
-                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7e3-uP-Isz">
+                                <rect key="frame" x="180" y="282" width="240" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-TJ-Qn8">
+                                        <rect key="frame" x="29" y="8" width="183" height="18"/>
+                                        <color key="tintColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
+                                        <state key="normal" title="Select your home currency">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectMainCurrency:" destination="g0h-DW-DOi" eventType="touchUpInside" id="18l-VI-ygD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="4CG-GE-YvQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="EXM-u3-1N0"/>
+                                    <constraint firstItem="Uhz-TJ-Qn8" firstAttribute="centerX" secondItem="7e3-uP-Isz" secondAttribute="centerX" id="d2H-EU-j1M"/>
+                                    <constraint firstItem="Uhz-TJ-Qn8" firstAttribute="centerY" secondItem="7e3-uP-Isz" secondAttribute="centerY" id="hp1-n1-ScY"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH5-fe-1oC">
+                                <rect key="frame" x="180" y="283" width="240" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19s-gs-4RM">
+                                        <rect key="frame" x="88" y="3" width="63" height="30"/>
+                                        <color key="tintColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Try again">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tryAgainButtonPressed:" destination="g0h-DW-DOi" eventType="touchUpInside" id="WSf-dm-Ukx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="19s-gs-4RM" firstAttribute="centerY" secondItem="IH5-fe-1oC" secondAttribute="centerY" id="Iwm-Hd-fua"/>
+                                    <constraint firstAttribute="width" constant="240" id="Mcf-Ou-0C7"/>
+                                    <constraint firstItem="19s-gs-4RM" firstAttribute="centerX" secondItem="IH5-fe-1oC" secondAttribute="centerX" id="VJd-cf-6pY"/>
+                                    <constraint firstAttribute="height" constant="35" id="gCy-MU-Dyp"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading currency data..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkh-g0-XHF">
+                                <rect key="frame" x="217" y="326" width="166" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ZLD-c0-Kwa" firstAttribute="top" secondItem="ojA-Xg-xHV" secondAttribute="bottom" constant="50" id="DCt-IR-1fZ"/>
+                            <constraint firstItem="IH5-fe-1oC" firstAttribute="centerY" secondItem="xR9-9t-dvN" secondAttribute="centerY" id="Gdc-5t-Zh5"/>
+                            <constraint firstItem="7e3-uP-Isz" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="HtA-QL-agH"/>
                             <constraint firstItem="BDb-vg-HzE" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="KHY-fc-R20"/>
                             <constraint firstItem="rkh-g0-XHF" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="KRJ-uF-2yN"/>
+                            <constraint firstItem="IH5-fe-1oC" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="Ze3-H9-NyM"/>
                             <constraint firstItem="9FX-E3-LG2" firstAttribute="top" secondItem="ZLD-c0-Kwa" secondAttribute="bottom" constant="20" id="bS7-9I-0VW"/>
                             <constraint firstItem="BDb-vg-HzE" firstAttribute="centerY" secondItem="xR9-9t-dvN" secondAttribute="centerY" id="f2c-eB-qbm"/>
                             <constraint firstItem="9FX-E3-LG2" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="fhj-fi-llU"/>
-                            <constraint firstItem="rkh-g0-XHF" firstAttribute="top" secondItem="BDb-vg-HzE" secondAttribute="bottom" constant="8" id="gBK-o9-iTm"/>
-                            <constraint firstItem="Uhz-TJ-Qn8" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="jSk-ii-w5m"/>
-                            <constraint firstItem="Uhz-TJ-Qn8" firstAttribute="centerY" secondItem="xR9-9t-dvN" secondAttribute="centerY" id="rJh-6c-YJt"/>
-                            <constraint firstItem="19s-gs-4RM" firstAttribute="centerY" secondItem="xR9-9t-dvN" secondAttribute="centerY" id="u7J-XT-0ch"/>
-                            <constraint firstItem="19s-gs-4RM" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="vYm-1i-rv1"/>
+                            <constraint firstItem="7e3-uP-Isz" firstAttribute="centerY" secondItem="xR9-9t-dvN" secondAttribute="centerY" id="iii-IZ-lY9"/>
+                            <constraint firstItem="rkh-g0-XHF" firstAttribute="top" secondItem="IH5-fe-1oC" secondAttribute="bottom" constant="8" id="mLR-J9-grI"/>
                             <constraint firstItem="ZLD-c0-Kwa" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="wOD-yl-AmS"/>
                         </constraints>
                     </view>
@@ -88,7 +111,9 @@
                         <outlet property="loadingIndicator" destination="BDb-vg-HzE" id="EoD-7S-Ey1"/>
                         <outlet property="loadingLabel" destination="rkh-g0-XHF" id="FaF-7F-7Hv"/>
                         <outlet property="selectCurrencyButton" destination="Uhz-TJ-Qn8" id="c1O-8C-IY6"/>
+                        <outlet property="selectCurrencyView" destination="7e3-uP-Isz" id="avj-ge-Tpp"/>
                         <outlet property="tryAgainButton" destination="19s-gs-4RM" id="LuN-kI-shG"/>
+                        <outlet property="tryAgainView" destination="IH5-fe-1oC" id="syc-Sq-rMN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEv-EK-yhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
