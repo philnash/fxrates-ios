@@ -5,6 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="OpenSans-ExtraBold.ttf">
+            <string>OpenSans-Extrabold</string>
+            <string>OpenSans-Extrabold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Getting Started Controller-->
         <scene sceneID="Mk4-Gm-auj">
@@ -19,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FX-E3-LG2">
-                                <rect key="frame" x="241" y="116" width="117" height="18"/>
+                                <rect key="frame" x="241" y="120" width="117" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -31,22 +37,33 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to FxRates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZLD-c0-Kwa">
-                                <rect key="frame" x="192" y="70" width="216" height="26"/>
-                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                                <rect key="frame" x="185" y="70" width="230" height="30"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans" pointSize="22"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="BDb-vg-HzE">
                                 <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-TJ-Qn8">
-                                <rect key="frame" x="208" y="285" width="185" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="19s-gs-4RM">
+                                <rect key="frame" x="268" y="285" width="63" height="30"/>
                                 <color key="tintColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <state key="normal" title="Try again">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryAgainButtonPressed:" destination="g0h-DW-DOi" eventType="touchUpInside" id="WSf-dm-Ukx"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhz-TJ-Qn8">
+                                <rect key="frame" x="209" y="291" width="183" height="18"/>
+                                <color key="tintColor" red="0.12549019610000001" green="0.48627450979999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="-2" maxY="0.0"/>
                                 <state key="normal" title="Select your home currency">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="mainCurrencyChangePressed:" destination="J95-PK-sRS" eventType="touchUpInside" id="GaU-LZ-loT"/>
                                     <action selector="selectMainCurrency:" destination="g0h-DW-DOi" eventType="touchUpInside" id="18l-VI-ygD"/>
                                 </connections>
                             </button>
@@ -62,6 +79,8 @@
                             <constraint firstItem="rkh-g0-XHF" firstAttribute="top" secondItem="BDb-vg-HzE" secondAttribute="bottom" constant="8" id="gBK-o9-iTm"/>
                             <constraint firstItem="Uhz-TJ-Qn8" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="jSk-ii-w5m"/>
                             <constraint firstItem="Uhz-TJ-Qn8" firstAttribute="centerY" secondItem="xR9-9t-dvN" secondAttribute="centerY" id="rJh-6c-YJt"/>
+                            <constraint firstItem="19s-gs-4RM" firstAttribute="centerY" secondItem="xR9-9t-dvN" secondAttribute="centerY" id="u7J-XT-0ch"/>
+                            <constraint firstItem="19s-gs-4RM" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="vYm-1i-rv1"/>
                             <constraint firstItem="ZLD-c0-Kwa" firstAttribute="centerX" secondItem="xR9-9t-dvN" secondAttribute="centerX" id="wOD-yl-AmS"/>
                         </constraints>
                     </view>
@@ -69,6 +88,7 @@
                         <outlet property="loadingIndicator" destination="BDb-vg-HzE" id="EoD-7S-Ey1"/>
                         <outlet property="loadingLabel" destination="rkh-g0-XHF" id="FaF-7F-7Hv"/>
                         <outlet property="selectCurrencyButton" destination="Uhz-TJ-Qn8" id="c1O-8C-IY6"/>
+                        <outlet property="tryAgainButton" destination="19s-gs-4RM" id="LuN-kI-shG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEv-EK-yhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -313,14 +333,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vs-E5-9Ep">
                                         <rect key="frame" x="150" y="0.0" width="300" height="290"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About FxRates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djF-4X-PQD">
-                                                <rect key="frame" x="72" y="50" width="156" height="26"/>
-                                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-mY-96l">
-                                                <rect key="frame" x="0.0" y="96" width="300" height="118"/>
+                                                <rect key="frame" x="0.0" y="100" width="300" height="118"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -340,6 +354,12 @@ https://twitter.com/philnash</string>
                                                     </mask>
                                                 </variation>
                                             </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About FxRates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djF-4X-PQD">
+                                                <rect key="frame" x="68" y="50" width="165" height="30"/>
+                                                <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans" pointSize="22"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -554,7 +574,7 @@ https://twitter.com/philnash</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070588235289999995" green="0.52549019610000003" blue="0.6588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans" pointSize="22"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
@@ -575,7 +595,7 @@ https://twitter.com/philnash</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070588235294117646" green="0.52549019607843139" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="22"/>
+                            <fontDescription key="fontDescription" name="OpenSans-Extrabold" family="Open Sans" pointSize="22"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>

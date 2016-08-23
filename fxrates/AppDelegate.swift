@@ -37,6 +37,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.rootViewController = gettingStartedController
         }
         
+        let navAppearance = UINavigationBar.appearance()
+        navAppearance.titleTextAttributes = [
+            NSFontAttributeName: UIFont(name: "OpenSans-ExtraBold", size: 21)!,
+            NSForegroundColorAttributeName: UIColor.whiteColor()
+        ]
+        
         self.window?.makeKeyAndVisible()
         
         return true

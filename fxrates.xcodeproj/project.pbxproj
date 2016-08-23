@@ -22,6 +22,7 @@
 		D777F0B21D5C8FE80003D946 /* CurrencyMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */; };
 		D777F0B41D5DFAAB0003D946 /* CurencyMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */; };
 		D777F0B61D5E23DE0003D946 /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = D777F0B51D5E23DE0003D946 /* Money.swift */; };
+		D78B20821D6C4B1C001F3310 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D78B20811D6C4B1C001F3310 /* OpenSans-ExtraBold.ttf */; };
 		D7EBD9DB1D6319EE0012AAEC /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EBD9DA1D6319EE0012AAEC /* ConverterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,7 @@
 		D777F0B11D5C8FE80003D946 /* CurrencyMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyMetadata.swift; sourceTree = "<group>"; };
 		D777F0B31D5DFAAB0003D946 /* CurencyMapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurencyMapping.swift; sourceTree = "<group>"; };
 		D777F0B51D5E23DE0003D946 /* Money.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		D78B20811D6C4B1C001F3310 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		D7EBD9DA1D6319EE0012AAEC /* ConverterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,7 @@
 		D773BA5F1D50B5FD000FF636 /* fxrates */ = {
 			isa = PBXGroup;
 			children = (
+				D78B20801D6C4AD9001F3310 /* Resources */,
 				D729A8E71D6747DA0070A52B /* ExchangeStore.swift */,
 				D773BA601D50B5FD000FF636 /* AppDelegate.swift */,
 				D729A8E11D6721AE0070A52B /* GettingStartedController.swift */,
@@ -124,6 +127,14 @@
 				D773BA771D50B5FD000FF636 /* Info.plist */,
 			);
 			path = fxratesTests;
+			sourceTree = "<group>";
+		};
+		D78B20801D6C4AD9001F3310 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D78B20811D6C4B1C001F3310 /* OpenSans-ExtraBold.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				D773BA6B1D50B5FD000FF636 /* LaunchScreen.storyboard in Resources */,
 				D773BA681D50B5FD000FF636 /* Assets.xcassets in Resources */,
 				D773BA661D50B5FD000FF636 /* Main.storyboard in Resources */,
+				D78B20821D6C4B1C001F3310 /* OpenSans-ExtraBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

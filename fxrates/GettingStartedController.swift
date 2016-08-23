@@ -16,6 +16,7 @@ class GettingStartedController: UIViewController {
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var loadingLabel: UILabel!
     @IBOutlet var selectCurrencyButton: UIButton!
+    @IBOutlet var tryAgainButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,23 @@ class GettingStartedController: UIViewController {
         presentViewController(newNavigationController, animated: true, completion: nil)
     }
     
+    @IBAction func tryAgainButtonPressed(sender: UIButton) {
+        loadingIndicator.startAnimating()
+        tryAgainButton.hidden = true
+        loadingLabel.text = "Loading currency data..."
+        currencyStore.getData { (result) -> Void in
+            switch result {
+            case .Success:
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.currenciesDidLoad()
+                })
+                
+            case .Failure(let error):
+                self.currenciesDidNotLoad(error)
+            }
+        }
+    }
+    
     func currenciesDidLoad() {
         loadingIndicator.stopAnimating()
         loadingIndicator.removeFromSuperview()
@@ -54,6 +72,7 @@ class GettingStartedController: UIViewController {
     func currenciesDidNotLoad(error: ErrorType) {
         loadingIndicator.stopAnimating()
         loadingLabel.text = "There was an error fetching the latest currency data"
+        tryAgainButton.hidden = false
         print("there was an error fetching the latest currency data")
         print(error)
     }
