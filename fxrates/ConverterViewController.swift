@@ -40,13 +40,6 @@ class ConverterViewController: UIViewController, UIGestureRecognizerDelegate{
             amount = 0
         }
         tableView.reloadData()
-//        if let text = toBeConverted.text, amount = Double(text) {
-//            let convertedAmountDouble = money.convert(amount, from: currency1, to: currency2)
-//            let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)
-//            converted.text = convertedAmountString
-//        } else {
-//            converted.text = "0"
-//        }
     }
     
     @IBAction func mainCurrencyChangePressed(sender: UIButton) {
