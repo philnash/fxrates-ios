@@ -11,7 +11,6 @@ import UIKit
 class ConverterViewController: UIViewController, UIGestureRecognizerDelegate{
     var currencyStore: CurrencyStore!
     var money: Money!
-    var amount: Double!
     var mainCurrency: MainCurrency!
     var exchangeStore: ExchangeStore!
     
@@ -35,11 +34,12 @@ class ConverterViewController: UIViewController, UIGestureRecognizerDelegate{
     
     @IBAction func moneyChanged(sender: UITextField) {
         if let text = toBeConverted.text, a = Double(text) {
-            amount = a
+            exchangeStore.amount = a
         } else {
-            amount = 0
+            exchangeStore.amount = 0
         }
         tableView.reloadData()
+        exchangeStore.saveData()
     }
     
     @IBAction func mainCurrencyChangePressed(sender: UIButton) {
@@ -82,6 +82,7 @@ class ConverterViewController: UIViewController, UIGestureRecognizerDelegate{
         super.viewDidLoad()
         
         exchangeStore = ExchangeStore()
+        toBeConverted.text = String(exchangeStore.amount)
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -156,9 +157,9 @@ extension ConverterViewController: UITableViewDelegate, UITableViewDataSource {
         
         let currency = exchangeStore.currencies[indexPath.row]
         let detail = CurrencyMapping.details(currency.code)
-        let convertedAmountDouble = money.convert(self.amount, from: currency, to: mainCurrency.currency!)
+        let convertedAmountDouble = money.convert(self.exchangeStore.amount, from: currency, to: mainCurrency.currency!)
         let convertedAmountString = currencyStringFormatter.stringFromNumber(convertedAmountDouble)!
-        let amountString = currencyStringFormatter.stringFromNumber(self.amount)!
+        let amountString = currencyStringFormatter.stringFromNumber(self.exchangeStore.amount)!
         if detail.name != "" {
             cell.textLabel?.text = "\(amountString) \(currency.code) is "
             cell.detailTextLabel?.text = "\(convertedAmountString) \(mainCurrency.currency!.code)"

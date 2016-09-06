@@ -10,11 +10,18 @@ import UIKit
 
 class ExchangeStore {
     var currencies: [Currency]
+    var amount: Double
     
     static let archiveURL: NSURL = {
         let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         let documentDirectory = documentsDirectories.first!
         return documentDirectory.URLByAppendingPathComponent("exchange.archive")
+    }()
+    
+    static let amountArchiveURL: NSURL = {
+        let documentsDirectories = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        let documentDirectory = documentsDirectories.first!
+        return documentDirectory.URLByAppendingPathComponent("amount.archive")
     }()
     
     init() {
@@ -23,9 +30,16 @@ class ExchangeStore {
         } else {
             currencies = [Currency]()
         }
+        if let path = ExchangeStore.amountArchiveURL.path, archivedAmount = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? Double {
+            amount = archivedAmount
+        } else {
+            amount = 100
+        }
     }
     
     func saveData() -> Bool {
-        return NSKeyedArchiver.archiveRootObject(currencies, toFile: ExchangeStore.archiveURL.path!)
+        let currenciesSaved = NSKeyedArchiver.archiveRootObject(currencies, toFile: ExchangeStore.archiveURL.path!)
+        let amountSaved = NSKeyedArchiver.archiveRootObject(amount, toFile: ExchangeStore.amountArchiveURL.path!)
+        return currenciesSaved && amountSaved
     }
 }
